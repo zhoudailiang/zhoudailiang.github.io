@@ -6,19 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://zhoudl.cn">
-  <title>Linux交换空间 | DaveZ的博客</title>
+  <title>Archives: 2018 | DaveZ的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="交换空间（Swap space）Swap space是磁盘上的一块区域，可以是一个分区，一个文件，或者二者之间的组合。主要用于当系统的物理内存吃紧的时候，Linux会将内存中不常访问的数据保存到swap区域，这样就可以腾出更多的物理内存。当系统需要访问swap上的数据的时候，Linux会将swap上的数据先加载到内存中，像这样放入swap区域和从swap区域取数据的动作，我们称为swap in和s">
-<meta name="keywords" content="Linux,Swap Space">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Linux交换空间">
-<meta property="og:url" content="http://zhoudl.cn/2018/02/02/Linux交换空间/index.html">
+  <meta name="description" content="DaveZ zhoudailiang zhoudl">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DaveZ的博客">
+<meta property="og:url" content="http://zhoudl.cn/archives/2018/page/2/index.html">
 <meta property="og:site_name" content="DaveZ的博客">
-<meta property="og:description" content="交换空间（Swap space）Swap space是磁盘上的一块区域，可以是一个分区，一个文件，或者二者之间的组合。主要用于当系统的物理内存吃紧的时候，Linux会将内存中不常访问的数据保存到swap区域，这样就可以腾出更多的物理内存。当系统需要访问swap上的数据的时候，Linux会将swap上的数据先加载到内存中，像这样放入swap区域和从swap区域取数据的动作，我们称为swap in和s">
-<meta property="og:updated_time" content="2018-02-01T17:37:08.935Z">
+<meta property="og:description" content="DaveZ zhoudailiang zhoudl">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux交换空间">
-<meta name="twitter:description" content="交换空间（Swap space）Swap space是磁盘上的一块区域，可以是一个分区，一个文件，或者二者之间的组合。主要用于当系统的物理内存吃紧的时候，Linux会将内存中不常访问的数据保存到swap区域，这样就可以腾出更多的物理内存。当系统需要访问swap上的数据的时候，Linux会将swap上的数据先加载到内存中，像这样放入swap区域和从swap区域取数据的动作，我们称为swap in和s">
+<meta name="twitter:title" content="DaveZ的博客">
+<meta name="twitter:description" content="DaveZ zhoudailiang zhoudl">
   
     <link rel="alternative" href="/atom.xml" title="DaveZ的博客" type="application/atom+xml">
   
@@ -130,200 +128,63 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Linux交换空间" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Linux交换空间
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/01/31/生单词记录/" class="archive-article-date">
+  	<time datetime="2018-01-31T02:35:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-31</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/01/31/生单词记录/">生单词记录</a>
     </h1>
   
 
-        
-        <a href="/2018/02/02/Linux交换空间/" class="archive-article-date">
-  	<time datetime="2018-02-01T17:16:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="交换空间（Swap-space）"><a href="#交换空间（Swap-space）" class="headerlink" title="交换空间（Swap space）"></a>交换空间（Swap space）</h3><p>Swap space是磁盘上的一块区域，可以是一个分区，一个文件，或者二者之间的组合。主要用于当系统的物理内存吃紧的时候，Linux会将内存中不常访问的数据保存到swap区域，这样就可以腾出更多的物理内存。当系统需要访问swap上的数据的时候，Linux会将swap上的数据先加载到内存中，像这样放入swap区域和从swap区域取数据的动作，我们称为swap in和swap out。</p>
-<a id="more"></a>
-<h3 id="Swap-space优点"><a href="#Swap-space优点" class="headerlink" title="Swap space优点"></a>Swap space优点</h3><p>显而易见，通过swap处理，可以为我们的程序提供更大的运行内存空间。虽然大部分情况下，我们的物理内存都是够用的，但是总会有意外，一旦某个进程需要的内存空间超过了预期，或者由于存在内存泄漏等原因导致内存不够的时候，就会触发内核的OOM Killer，去kill掉内存耗用最多的进程，某些情况下还会导致系统重启。有了swap，就可以避免上述进程被kill，虽然我们的速度会变慢。</p>
-<p>Linux内存管理中，系统会尽可能的将空闲的内存用于cache，用来加快系统的I/O速度，所以如果能将不常用的内存数据移动到swap上，就会有更多的物理内存用于cache，从而提高系统的整体性能。</p>
-<h3 id="Swap-space缺点"><a href="#Swap-space缺点" class="headerlink" title="Swap space缺点"></a>Swap space缺点</h3><p>由于Swap space是磁盘上的一块区域，而磁盘的读写速度比内存的读写速度要慢好几个数量级，所以一旦频繁的进行读写swap space必然会造成系统运行卡顿，严重时会造成假死现象。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>Swap space有其优点，亦有其缺点，至于到底好不好这个还要根据我们的实际情况去设定。如果我们的设备内存明显不够用，但是又想跑程序，swap是唯一的选择，慢点总比不能工作强。如果内存勉强够用，这种情况下是比较适合配置swap的，建议配置。如果内存充足，这个要分情况，如果是自己的桌面系统建议配置swap，一旦内存使用异常，我们还有机会去保存工作进度。如果是服务器就建议不要配置了，一旦出现异常，因为有了swap，系统还是会继续工作，只是性能会变得很差，造成服务持续中断，重启可以尽快恢复系统，总比一直在那里苟延残喘要好很多。</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你的心意<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/getmoney.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Swap Space</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">单词本</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://zhoudl.cn/2018/02/02/Linux交换空间/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/02/02/Linux内存管理/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Linux内存管理
-        
-      </div>
-    </a>
   
   
-    <a href="/2018/01/31/生单词记录/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">生单词记录</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
-  
-  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-<script>
-  var cloudTieConfig = {
-    url: "http://zhoudl.cn/2018/02/02/Linux交换空间/", 
-    sourceId: "Linux交换空间",
-    productKey: "true",
-    target: "cloud-tie-wrapper"
-  };
-</script>
-<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+    </div></section>
   
 
-  
-
-  
-
+    
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/2018/">&laquo; Prev</a><a class="page-number" href="/archives/2018/">1</a><span class="page-number current">2</span>
+    </nav>
   
 
 
@@ -347,8 +208,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
