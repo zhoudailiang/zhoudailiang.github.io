@@ -6,17 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://zhoudl.cn">
-  <title>Archives: 2018/4 | DaveZ的博客</title>
+  <title>Android View方形背景变圆形动画实现 | DaveZ的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="DaveZ zhoudailiang zhoudl">
-<meta property="og:type" content="website">
-<meta property="og:title" content="DaveZ的博客">
-<meta property="og:url" content="http://zhoudl.cn/archives/2018/04/index.html">
+  <meta name="description" content="几年前曾经看到过一个方形背景点击一下就变成圆形背景的动画，觉得非常好玩，今天我们就用几行代码来实现一下这个效果。">
+<meta name="keywords" content="Android,动画">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android View方形背景变圆形动画实现">
+<meta property="og:url" content="http://zhoudl.cn/2018/04/15/Android-View方形背景变圆形动画实现/index.html">
 <meta property="og:site_name" content="DaveZ的博客">
-<meta property="og:description" content="DaveZ zhoudailiang zhoudl">
+<meta property="og:description" content="几年前曾经看到过一个方形背景点击一下就变成圆形背景的动画，觉得非常好玩，今天我们就用几行代码来实现一下这个效果。">
+<meta property="og:image" content="http://zhoudl.cn/images/anim-rectangle-circle.gif">
+<meta property="og:updated_time" content="2018-04-15T15:32:36.174Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DaveZ的博客">
-<meta name="twitter:description" content="DaveZ zhoudailiang zhoudl">
+<meta name="twitter:title" content="Android View方形背景变圆形动画实现">
+<meta name="twitter:description" content="几年前曾经看到过一个方形背景点击一下就变成圆形背景的动画，觉得非常好玩，今天我们就用几行代码来实现一下这个效果。">
+<meta name="twitter:image" content="http://zhoudl.cn/images/anim-rectangle-circle.gif">
   
     <link rel="alternative" href="/atom.xml" title="DaveZ的博客" type="application/atom+xml">
   
@@ -128,36 +132,68 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Android-View方形背景变圆形动画实现" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/15/Android-View方形背景变圆形动画实现/" class="archive-article-date">
-  	<time datetime="2018-04-15T14:59:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-15</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/15/Android-View方形背景变圆形动画实现/">Android View方形背景变圆形动画实现</a>
+    <h1 class="article-title" itemprop="name">
+      Android View方形背景变圆形动画实现
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/04/15/Android-View方形背景变圆形动画实现/" class="archive-article-date">
+  	<time datetime="2018-04-15T14:59:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>几年前曾经看到过一个方形背景点击一下就变成圆形背景的动画，觉得非常好玩，今天我们就用几行代码来实现一下这个效果。</p>
+<p><img src="/images/anim-rectangle-circle.gif" alt=""></p>
+<a id="more"></a>
+<p>上面就是效果图，其实实现起来很简单，我们只要 动态的去设置背景四个角的半径就好了。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">shape</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">corners</span> <span class="attr">android:radius</span>=<span class="string">"0dp"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">solid</span> <span class="attr">android:color</span>=<span class="string">"@android:color/holo_red_light"</span> /&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">shape</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>然后将这个设置到我们 View ，作为 View 的背景，然后动态设置 View 的宽高为一个正方形，接着就是设置我们背景的半径为我们宽高的一半。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line"></span><br><span class="line">        TextView tv = findViewById(R.id.content);</span><br><span class="line"></span><br><span class="line">        tv.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">                startAnim(v);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">startAnim</span><span class="params">(<span class="keyword">final</span> View v)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> width = v.getWidth();</span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> height = v.getHeight();</span><br><span class="line">        GradientDrawable drawable = (GradientDrawable) v.getBackground();</span><br><span class="line">        ObjectAnimator radius = ObjectAnimator.ofFloat(drawable, <span class="string">"cornerRadius"</span>, <span class="number">0</span>, <span class="number">180</span>);</span><br><span class="line">        radius.addUpdateListener(<span class="keyword">new</span> ValueAnimator.AnimatorUpdateListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationUpdate</span><span class="params">(ValueAnimator animation)</span> </span>&#123;</span><br><span class="line">                RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams) v.getLayoutParams();</span><br><span class="line">                lp.width = (<span class="keyword">int</span>) (width + (<span class="number">360</span> - width) / <span class="number">500f</span> * animation.getCurrentPlayTime());</span><br><span class="line">                lp.height = (<span class="keyword">int</span>) (height + (<span class="number">360</span> - height) / <span class="number">500f</span> * animation.getCurrentPlayTime());</span><br><span class="line">                v.setLayoutParams(lp);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        radius.setDuration(<span class="number">500</span>);</span><br><span class="line">        radius.start();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>主要是一个分解的思想，代码实现很简单。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你的心意<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/getmoney.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -173,57 +209,122 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://zhoudl.cn/2018/04/15/Android-View方形背景变圆形动画实现/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/11/破解IntelliJ-IDEA注册码/" class="archive-article-date">
-  	<time datetime="2018-04-11T01:34:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-11</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/04/11/破解IntelliJ-IDEA注册码/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">破解IntelliJ IDEA注册码</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/11/破解IntelliJ-IDEA注册码/">破解IntelliJ IDEA注册码</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">IntelliJ 破解 注册码</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://zhoudl.cn/2018/04/15/Android-View方形背景变圆形动画实现/",
+  owner: 'zhoudailiang',
+  repo: 'zhoudailiang.github.io',
+  oauth: {
+    client_id: '69baf0c81745efe03287',
+    client_secret: 'fae05bc26a34c10591330c1f81b2b0df64ddc0c3',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -246,8 +347,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
